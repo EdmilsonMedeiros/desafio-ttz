@@ -56,6 +56,8 @@ _Obs: como o arquivo é grande, ao importar o arquivo, o processo de leitura dos
     
     npm run dev
 
+
     php artisan serve
+
 
     php artisan queue:work
