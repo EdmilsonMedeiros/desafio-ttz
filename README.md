@@ -43,7 +43,7 @@ _Obs: como o arquivo é grande, ao importar o arquivo, o processo de leitura dos
 
     npm install
 
-*CONFIGURE O BANCO DE DADOS NAS VARIÁVEIS DE AMBIENTE APARTIR DE UMA CÓPIA DO .env.example COMO .ev:*
+*CONFIGURE O BANCO APARTIR DE UMA CÓPIA DO .env.example COMO .ev:*
 
     DB_CONNECTION=mysql
     DB_HOST=192.168.0.26
