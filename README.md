@@ -55,7 +55,7 @@ _Obs: como o arquivo é grande, ao importar o arquivo, o processo de leitura dos
 *PARA SERVIR A APLICAÇÃO EM MODO DE DESENVOLVIMENTO, DEIXE EXECUTANDO OS 3 COMANDOS ABAIXO VIA TERMINAL NA RAIZ DO PROJETO:*
     
     npm run dev
-
+<br>
     php artisan serve
-    
+<br>
     php artisan queue:work
