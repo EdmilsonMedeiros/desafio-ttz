@@ -24,6 +24,36 @@
        - GET /events?limit=50 → últimos eventos;
        - GET /items/top → itens mais coletados.
 
-# CONFIGURAÇÕES NECESSÁRIAS NO PHP PARA SUPORTAR O UPLOAD DOS LOGS:
-    - post_max_size = 12M
-    - upload_max_filesize = 12M
+_Obs: como o arquivo é grande, ao importar o arquivo, o processo de leitura dos dados e escrita na base demora um pouco e fica em fila de execução, o que pode passar a impressão de que nada aconteceu ao importar, mas como a mensagem retornada informa, esses dados ficam em processamento._
+
+## CONFIGURAÇÕES NECESSÁRIAS NO php.ini PARA SUPORTAR O UPLOAD DOS LOGS:
+    post_max_size = 12M
+    upload_max_filesize = 12M
+
+## SCRIPT DE DEPLOY:
+*CLONE O REPOSITÓRIO:*
+    
+    git clone <nome_repo...>
+
+*EXECUTE O COMANDO PARA INSTALAÇÃO DO COMPOSER:*
+
+    composer install 
+
+*EXECUTE O COMANDO PARA A INSTALAÇÃO DOS PACOTES NPM:*
+
+    npm install
+
+*CONFIGURE O BANCO DE DADOS NAS VARIÁVEIS DE AMBIENTE APARTIR DE UMA CÓPIA DO .env.example COMO .ev:*
+
+    DB_CONNECTION=mysql
+    DB_HOST=192.168.0.26
+    DB_PORT=3306
+    DB_DATABASE=ttz_project
+    DB_USERNAME=root
+    DB_PASSWORD=dev
+
+*PARA SERVIR A APLICAÇÃO EM MODO DE DESENVOLVIMENTO, DEIXE EXECUTANDO OS 3 COMANDOS ABAIXO VIA TERMINAL NA RAIZ DO PROJETO:*
+    
+    npm run dev
+    php artisan serve
+    php artisan queue:work
